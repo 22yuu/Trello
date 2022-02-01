@@ -48,4 +48,6 @@ export default React.memo(DragabbleCard);
     React.memo는 리액트에게 prop이 변하지 않았다면 해당 요소는 (여기서는 DraggableCard) 다시 렌더링하지 않게 해주는 기능이다.
 
     React memo는 가끔 prop이 바뀌지 않는다면 다시 렌더링할 필요가 없는 component들에 사용하면 최적화하는데 도움이 된다!
+
+    React memo를 사용할 때, function에서 export를 하면 안됨.
 */
