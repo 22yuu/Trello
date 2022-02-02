@@ -13,14 +13,15 @@ const Card = styled.div<{ isDragging: boolean }>`
 `;
 
 interface IDragabbleCardProps {
-  toDo: string;
+  toDoId: number;
+  toDoText: string;
   index: number;
 }
 
-function DragabbleCard({ toDo, index }: IDragabbleCardProps) {
+function DragabbleCard({ toDoId, toDoText, index }: IDragabbleCardProps) {
   //   console.log(toDo, "has been rendered");
   return (
-    <Draggable key={toDo} draggableId={toDo} index={index}>
+    <Draggable draggableId={toDoId + ""} index={index}>
       {/* key와 draggableId 는 같아야 한다. */}
       {(magic, snapshot) => (
         <Card
@@ -29,7 +30,7 @@ function DragabbleCard({ toDo, index }: IDragabbleCardProps) {
           {...magic.draggableProps}
           {...magic.dragHandleProps}
         >
-          {toDo}
+          {toDoText}
         </Card>
       )}
     </Draggable>
